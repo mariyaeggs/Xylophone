@@ -9,11 +9,11 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, AVAudioPlayerDelegate {
+class ViewController: UIViewController {
    
    // Declare an audio player
    var player : AVAudioPlayer!
-   var selectedSoundFile = ""
+   var selectedSoundFile : String = ""
    let soundArray = ["note1", "note2", "note3", "note4", "note5", "note5", "note6", "note7"]
    
    override func viewDidLoad() {
@@ -22,8 +22,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
    
    @IBAction func noteTapped(_ sender: UIButton) {
       
-      var selectedSoundFile: String = soundArray[sender.tag - 1]
-      print(selectedSoundFile)
+      selectedSoundFile = soundArray[sender.tag - 1]
+      print(selectedSoundFile, ", tag:", sender.tag - 1)
       playSound()
    }
    func playSound(){
